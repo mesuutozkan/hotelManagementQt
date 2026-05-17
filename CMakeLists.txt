@@ -11,6 +11,12 @@ qt_add_executable(hotelManagementQt
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    resource.qrc
+
+
+
+
+
 )
 
 target_link_libraries(hotelManagementQt
