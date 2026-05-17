@@ -11,12 +11,14 @@ qt_add_executable(hotelManagementQt
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    resource.qrc
+    room.h room.cpp
+    hotel.h hotel.cpp
+)
 
-
-
-
-
+qt_add_resources(hotelManagementQt "resources"
+    PREFIX "/"
+    FILES
+        images/hotel.png
 )
 
 target_link_libraries(hotelManagementQt

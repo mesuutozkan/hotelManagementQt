@@ -23,10 +23,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>11</x>
-      <y>11</y>
-      <width>321</width>
-      <height>541</height>
+      <x>0</x>
+      <y>20</y>
+      <width>291</width>
+      <height>511</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -50,6 +50,26 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #1E90FF;  /* Dodger Blue */
+    border: 2px solid #1C86EE;  /* Steel Blue */
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+QPushButton:hover {
+    background-color: #63B8FF;  /* Light Sky Blue */
+}
+QPushButton:pressed {
+    background-color: #1C86EE;  /* Steel Blue */
+    padding-left: 12px;
+    padding-top: 12px;
+}</string>
+       </property>
        <property name="text">
         <string>Check In</string>
        </property>
@@ -62,6 +82,26 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #FF6347;  /* Tomato */
+    border: 2px solid #CD5C5C;  /* Indian Red */
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+QPushButton:hover {
+    background-color: #FF7F50;  /* Coral */
+}
+QPushButton:pressed {
+    background-color: #CD5C5C;  /* Indian Red */
+    padding-left: 12px;
+    padding-top: 12px;
+}</string>
        </property>
        <property name="text">
         <string>Check Out</string>
@@ -76,6 +116,27 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #32CD32;  /* Lime Green */
+    border: 2px solid #228B22;  /* Forest Green */
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+QPushButton:hover {
+    background-color: #66CDAA;  /* Medium Aquamarine */
+}
+QPushButton:pressed {
+    background-color: #228B22;  /* Forest Green */
+    padding-left: 12px;
+    padding-top: 12px;
+}
+</string>
+       </property>
        <property name="text">
         <string>Extra</string>
        </property>
@@ -86,10 +147,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>442</x>
-      <y>119</y>
-      <width>311</width>
-      <height>361</height>
+      <x>290</x>
+      <y>20</y>
+      <width>501</width>
+      <height>511</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -102,7 +163,7 @@
      <enum>Qt::TextFormat::AutoText</enum>
     </property>
     <property name="pixmap">
-     <pixmap>images/hotel.png</pixmap>
+     <pixmap resource="build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/resources.qrc">:/images/hotel.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -121,6 +182,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
