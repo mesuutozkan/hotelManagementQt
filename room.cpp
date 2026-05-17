@@ -1,9 +1,9 @@
 #include "room.h"
 
-room::room(int _roomNumber, double _dailyRate)
+Room::Room(int _roomNumber, double _dailyRate)
     : roomNumber(_roomNumber), guestName(""), dailyRate(_dailyRate), isOccupied(false), extraExpenses(0) {};
 
-void room :: checkIn(const string &_guestName)
+void Room :: checkIn(const string &_guestName)
 {
     if(!isOccupied)
     {
@@ -17,7 +17,7 @@ void room :: checkIn(const string &_guestName)
     }
 }
 
-void room :: checkOut(int days)
+void Room :: checkOut(int days)
 {
     if(isOccupied)
     {
@@ -37,17 +37,17 @@ void room :: checkOut(int days)
     }
 }
 
-void room :: addExtraExpenses(double _extraExpenses)
+void Room :: addExtraExpenses(double _extraExpenses)
 {
     extraExpenses += _extraExpenses;
 }
 
-int room :: getRoomNumber()
+int Room :: getRoomNumber()
 {
     return roomNumber;
 }
 
-bool room :: isRoomOccupied()
+bool Room :: isRoomOccupied()
 {
     return isOccupied;
 }

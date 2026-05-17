@@ -4,20 +4,20 @@
 #include "room.h"
 #include <vector>
 
-class hotel
+class Hotel
 {
 private:
-    static hotel *instance;     //Declaration
-    vector <room> rooms;
+    static Hotel *instance;     //Declaration
+    vector <Room> rooms;
 
-    hotel();        //Private constructor for Singleton pattern
+    Hotel();        //Private constructor for Singleton pattern
 
 public:
-    static hotel *getInstance();
+    static Hotel *getInstance();
 
-    room *findRoom(int _roomNumber);
+    Room *findRoom(int _roomNumber);
 
-    ~hotel();
+    ~Hotel();
 
 };
 

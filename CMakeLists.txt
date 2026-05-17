@@ -13,6 +13,7 @@ qt_add_executable(hotelManagementQt
     mainwindow.ui
     room.h room.cpp
     hotel.h hotel.cpp
+    checkindialog.h checkindialog.cpp checkindialog.ui
 )
 
 qt_add_resources(hotelManagementQt "resources"

@@ -1,13 +1,11 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include <iostream>
-
 #include <string>
 
 using namespace std;
 
-class room
+class Room
 {
 private:
     int roomNumber;
@@ -17,7 +15,7 @@ private:
     double extraExpenses;
 
 public:
-    room(int _roomNumber, double _dailyRate);
+    Room(int _roomNumber, double _dailyRate);
 
     void checkIn(const string &_guestName);
     void checkOut(int days);
