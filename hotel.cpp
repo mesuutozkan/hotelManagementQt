@@ -20,6 +20,7 @@ Hotel::Hotel()
     rooms.emplace_back(103, 2500.0);
     rooms.emplace_back(104, 2500.0);
 
+
     rooms.emplace_back(201, 4000.0);        //2. floor (double rooms)
     rooms.emplace_back(202, 4000.0);
     rooms.emplace_back(203, 4000.0);

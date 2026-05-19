@@ -19,7 +19,7 @@ public:
 
     void checkIn(const string &_guestName);
     void checkOut(int days);
-    void addExtraExpenses(double amount);
+    void addExtraExpenses(double _extraExpenses);
 
     int getRoomNumber();
     bool isRoomOccupied();

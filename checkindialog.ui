@@ -225,21 +225,28 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #1E90FF;  /* Dodger Blue */
+    border: 2px solid #1C86EE;  /* Steel Blue */
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+QPushButton:hover {
+    background-color: #63B8FF;  /* Light Sky Blue */
+}
+QPushButton:pressed {
+    background-color: #1C86EE;  /* Steel Blue */
+    padding-left: 12px;
+    padding-top: 12px;
+}</string>
+        </property>
         <property name="text">
          <string>Okay</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonCancel">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Cancel</string>
         </property>
        </widget>
       </item>

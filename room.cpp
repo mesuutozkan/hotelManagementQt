@@ -21,7 +21,7 @@ void Room :: checkOut(int days)
 {
     if(isOccupied)
     {
-        int totalCost = (days * dailyRate) + extraExpenses;
+        double totalCost = (days * dailyRate) + extraExpenses;
 
         guestName = "";
 
