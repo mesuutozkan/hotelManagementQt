@@ -21,6 +21,8 @@ CheckInDialog::CheckInDialog(QWidget *parent)
     fillRoomButtonColors(301, ui->pushButtonRoom301);
     fillRoomButtonColors(302, ui->pushButtonRoom302);
 
+
+
 }
 
 void CheckInDialog :: fillRoomButtonColors(int _roomNumber, QPushButton* pushButton)
@@ -65,6 +67,9 @@ void CheckInDialog::on_pushButtonOkay_clicked()
     accept();
 }
 
+/*
+ * Use below method for only 1 push button, instead "setStatusRoomButtons" for multiple button set.
+ *
 void CheckInDialog::on_pushButtonRoom101_clicked()
 {
     setChoosenRoomNumber(101);
@@ -97,6 +102,42 @@ void CheckInDialog::on_pushButtonRoom101_clicked()
         }
     }
 }
+*
+*/
+
+void CheckInDialog::setStatusRoomButtons(int _roomNumber, QPushButton *pushButton)
+{
+    setChoosenRoomNumber(_roomNumber);
+
+    Hotel* hotel = Hotel::getInstance();
+
+    Room *room = hotel->findRoom(getChoosenRoomNumber());
+
+    if(!room->isRoomOccupied())
+    {
+
+        RoomClickedForCheckInDialog *roomClickedForCheckInDialog = new RoomClickedForCheckInDialog(this);     //Form a RoomClickedCheckInDialog object
+
+        auto ret = roomClickedForCheckInDialog->exec();       //Start CheckInDialog
+
+        if(ret == QDialog :: Accepted)          //Control point
+        {
+
+            room->checkIn(getTypedCustomerName().toStdString());
+
+            fillRoomButtonColors(getChoosenRoomNumber(), pushButton);
+
+            qDebug() << "Okay Clicked";
+
+        }
+        else
+        {
+            qDebug() << "Cancel Clicked";
+
+        }
+    }
+
+}
 
 QString CheckInDialog::getTypedCustomerName() const
 {
@@ -116,5 +157,58 @@ int CheckInDialog::getChoosenRoomNumber() const
 void CheckInDialog::setChoosenRoomNumber(int _choosenRoomNumber)
 {
     choosenRoomNumber = _choosenRoomNumber;
+}
+
+
+void CheckInDialog::on_pushButtonRoom101_clicked()
+{
+    setStatusRoomButtons(101, ui->pushButtonRoom101);
+}
+
+void CheckInDialog::on_pushButtonRoom102_clicked()
+{
+    setStatusRoomButtons(102, ui->pushButtonRoom102);
+}
+
+
+void CheckInDialog::on_pushButtonRoom103_clicked()
+{
+    setStatusRoomButtons(103, ui->pushButtonRoom103);
+}
+
+
+void CheckInDialog::on_pushButtonRoom104_clicked()
+{
+    setStatusRoomButtons(104, ui->pushButtonRoom104);
+}
+
+
+void CheckInDialog::on_pushButtonRoom201_clicked()
+{
+    setStatusRoomButtons(201, ui->pushButtonRoom201);
+}
+
+
+void CheckInDialog::on_pushButtonRoom202_clicked()
+{
+    setStatusRoomButtons(202, ui->pushButtonRoom202);
+}
+
+
+void CheckInDialog::on_pushButtonRoom203_clicked()
+{
+    setStatusRoomButtons(203, ui->pushButtonRoom203);
+}
+
+
+void CheckInDialog::on_pushButtonRoom301_clicked()
+{
+    setStatusRoomButtons(301, ui->pushButtonRoom301);
+}
+
+
+void CheckInDialog::on_pushButtonRoom302_clicked()
+{
+    setStatusRoomButtons(302, ui->pushButtonRoom302);
 }
 

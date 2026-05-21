@@ -20,6 +20,8 @@ public:
 private slots:
     void on_pushButtonCheckIn_clicked();
 
+    void on_pushButtonCheckOut_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

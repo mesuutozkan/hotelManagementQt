@@ -16,11 +16,14 @@
   <widget class="QLabel" name="labelRoomNumber">
    <property name="geometry">
     <rect>
-     <x>102</x>
-     <y>29</y>
-     <width>251</width>
+     <x>250</x>
+     <y>30</y>
+     <width>191</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -73,6 +76,24 @@
    </property>
    <property name="text">
     <string>Customer Name:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelRoomNumber_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>30</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+
+</string>
+   </property>
+   <property name="text">
+    <string>Check In For Room </string>
    </property>
   </widget>
  </widget>

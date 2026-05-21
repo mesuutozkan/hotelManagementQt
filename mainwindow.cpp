@@ -39,3 +39,9 @@ void MainWindow::on_pushButtonCheckIn_clicked()
      */
 }
 
+
+void MainWindow::on_pushButtonCheckOut_clicked()
+{
+//To Do:add checkout pressed button and use same ui with different event shown
+}
+

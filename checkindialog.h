@@ -28,11 +28,31 @@ private slots:
 
     void on_pushButtonRoom101_clicked();
 
+    void on_pushButtonRoom102_clicked();
+
+    void on_pushButtonRoom103_clicked();
+
+    void on_pushButtonRoom104_clicked();
+
+    void on_pushButtonRoom201_clicked();
+
+    void on_pushButtonRoom202_clicked();
+
+    void on_pushButtonRoom203_clicked();
+
+    void on_pushButtonRoom301_clicked();
+
+    void on_pushButtonRoom302_clicked();
+
 private:
     Ui::CheckInDialog *ui;
 
     int choosenRoomNumber;
+
     QString typedCustomerName;
+
+    void setStatusRoomButtons(int _roomNumber, QPushButton *pushButton);
+
 };
 
 #endif // CHECKINDIALOG_H
