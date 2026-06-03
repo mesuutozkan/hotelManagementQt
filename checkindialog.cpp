@@ -4,6 +4,7 @@
 #include "room.h"
 #include "hotel.h"
 #include "roomclickedforcheckindialog.h"
+#include "checkoutdialog.h"
 
 CheckInDialog::CheckInDialog(QWidget *parent)
     : QDialog(parent)
@@ -107,9 +108,11 @@ void CheckInDialog::on_pushButtonRoom101_clicked()
 
 void CheckInDialog::setStatusRoomButtons(int _roomNumber, QPushButton *pushButton)
 {
-    setChoosenRoomNumber(_roomNumber);
-
     Hotel* hotel = Hotel::getInstance();
+
+    if(getIsCheckInPressed())
+    {
+    setChoosenRoomNumber(_roomNumber);
 
     Room *room = hotel->findRoom(getChoosenRoomNumber());
 
@@ -136,7 +139,47 @@ void CheckInDialog::setStatusRoomButtons(int _roomNumber, QPushButton *pushButto
 
         }
     }
+    }
+    else
+    {
+        setChoosenRoomNumber(_roomNumber);
 
+        Room *room = hotel->findRoom(getChoosenRoomNumber());
+
+        if(room->isRoomOccupied())
+        {
+
+            CheckOutDialog *checkOutDialog = new CheckOutDialog(this);     //Form a RoomClickedCheckInDialog object
+
+            auto ret = checkOutDialog->exec();       //Start CheckInDialog
+
+            if(ret == QDialog :: Accepted)          //Control point
+            {
+
+                room->checkOut(checkOutDialog->getTotalDays());
+
+                fillRoomButtonColors(getChoosenRoomNumber(), pushButton);
+
+                qDebug() << "Okay Clicked";
+
+            }
+            else
+            {
+                qDebug() << "Cancel Clicked";
+
+            }
+        }
+    }
+}
+
+bool CheckInDialog::getIsCheckInPressed() const
+{
+    return isCheckInPressed;
+}
+
+void CheckInDialog::setIsCheckInPressed(bool newIsCheckInPressed)
+{
+    isCheckInPressed = newIsCheckInPressed;
 }
 
 QString CheckInDialog::getTypedCustomerName() const

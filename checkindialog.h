@@ -21,6 +21,9 @@ public:
     QString getTypedCustomerName() const;
     void setTypedCustomerName(const QString &newTypedCustomerName);
 
+    bool getIsCheckInPressed() const;
+    void setIsCheckInPressed(bool newIsCheckInPressed);
+
 private slots:
     void on_pushButtonOkay_clicked();
 
@@ -52,6 +55,8 @@ private:
     QString typedCustomerName;
 
     void setStatusRoomButtons(int _roomNumber, QPushButton *pushButton);
+
+    bool isCheckInPressed;
 
 };
 

@@ -19,6 +19,8 @@ void MainWindow::on_pushButtonCheckIn_clicked()
 {
     CheckInDialog *checkInDialog = new CheckInDialog(this);     //Form a CheckInDialog object
 
+    checkInDialog->setIsCheckInPressed(true);
+
     auto ret = checkInDialog->exec();       //Start CheckInDialog
 
     if(ret == QDialog :: Accepted)          //Control point
@@ -42,6 +44,21 @@ void MainWindow::on_pushButtonCheckIn_clicked()
 
 void MainWindow::on_pushButtonCheckOut_clicked()
 {
-//To Do:add checkout pressed button and use same ui with different event shown
+    CheckInDialog *checkInDialog = new CheckInDialog(this);     //Form a CheckInDialog object
+
+    checkInDialog->setIsCheckInPressed(false);
+
+    auto ret = checkInDialog->exec();       //Start CheckInDialog
+
+    if(ret == QDialog :: Accepted)          //Control point
+    {
+        qDebug() << "Okay Clicked";
+
+    }
+    else
+    {
+        qDebug() << "Cancel Clicked";
+
+    }
 }
 
