@@ -22,6 +22,8 @@ private slots:
 
     void on_pushButtonCheckOut_clicked();
 
+    void on_pushButtonExtra_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

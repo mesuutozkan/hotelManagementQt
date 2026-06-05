@@ -12,21 +12,21 @@ private:
     string guestName;
     double dailyRate;
     bool isOccupied;
-    double extraExpenses;
+    int extraExpenses;
 
 public:
     Room(int _roomNumber, double _dailyRate);
 
     void checkIn(const string &_guestName);
     void checkOut(int days);
-    void addExtraExpenses(double _extraExpenses);
+    void addExtraExpenses(int _extraExpenses);
 
     int getRoomNumber();
     bool isRoomOccupied();
 
     string getGuestName() const;
     double getDailyRate() const;
-    double getExtraExpenses() const;
+    int getExtraExpenses() const;
 };
 
 #endif // ROOM_H

@@ -16,6 +16,7 @@ qt_add_executable(hotelManagementQt
     checkindialog.h checkindialog.cpp checkindialog.ui
     roomclickedforcheckindialog.h roomclickedforcheckindialog.cpp roomclickedforcheckindialog.ui
     checkoutdialog.h checkoutdialog.cpp checkoutdialog.ui
+    extrabuttondialog.h extrabuttondialog.cpp extrabuttondialog.ui
 )
 
 qt_add_resources(hotelManagementQt "resources"

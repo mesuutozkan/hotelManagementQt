@@ -5,7 +5,7 @@ double Room::getDailyRate() const
     return dailyRate;
 }
 
-double Room::getExtraExpenses() const
+int Room::getExtraExpenses() const
 {
     return extraExpenses;
 }
@@ -47,9 +47,12 @@ void Room :: checkOut(int days)
     }
 }
 
-void Room :: addExtraExpenses(double _extraExpenses)
+void Room :: addExtraExpenses(int _extraExpenses)
 {
+    if(isOccupied)
+    {
     extraExpenses += _extraExpenses;
+    }
 }
 
 int Room :: getRoomNumber()

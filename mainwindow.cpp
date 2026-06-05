@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include "checkindialog.h"
+#include "extrabuttondialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -49,6 +50,26 @@ void MainWindow::on_pushButtonCheckOut_clicked()
     checkInDialog->setIsCheckInPressed(false);
 
     auto ret = checkInDialog->exec();       //Start CheckInDialog
+
+    if(ret == QDialog :: Accepted)          //Control point
+    {
+        qDebug() << "Okay Clicked";
+
+    }
+    else
+    {
+        qDebug() << "Cancel Clicked";
+
+    }
+}
+
+
+void MainWindow::on_pushButtonExtra_clicked()
+{
+    ExtraButtonDialog *extraButtonDialog = new ExtraButtonDialog(this);     //Form an object
+
+
+    auto ret = extraButtonDialog->exec();       //Start
 
     if(ret == QDialog :: Accepted)          //Control point
     {
