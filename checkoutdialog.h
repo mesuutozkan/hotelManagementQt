@@ -18,10 +18,21 @@ public:
     int getTotalDays() const;
     void setTotalDays(int newTotalDays);
 
+    int getCurrentRoomNumber() const;
+    void setCurrentRoomNumber(int newCurrentRoomNumber);
+
+private slots:
+    void on_pushButtonCalculateFee_clicked();
+
+    void on_pushButtonCheckOut_clicked();
+
+    void on_pushButtonCancel_clicked();
+
 private:
     Ui::CheckOutDialog *ui;
 
     int totalDays;
+    int currentRoomNumber;
 };
 
 #endif // CHECKOUTDIALOG_H

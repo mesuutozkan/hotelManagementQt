@@ -1,5 +1,15 @@
 #include "room.h"
 
+double Room::getDailyRate() const
+{
+    return dailyRate;
+}
+
+double Room::getExtraExpenses() const
+{
+    return extraExpenses;
+}
+
 Room::Room(int _roomNumber, double _dailyRate)
     : roomNumber(_roomNumber), guestName(""), dailyRate(_dailyRate), isOccupied(false), extraExpenses(0) {};
 
@@ -52,3 +62,7 @@ bool Room :: isRoomOccupied()
     return isOccupied;
 }
 
+string Room::getGuestName() const
+{
+    return guestName;
+}

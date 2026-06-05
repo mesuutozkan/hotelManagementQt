@@ -24,6 +24,9 @@ public:
     int getRoomNumber();
     bool isRoomOccupied();
 
+    string getGuestName() const;
+    double getDailyRate() const;
+    double getExtraExpenses() const;
 };
 
 #endif // ROOM_H
