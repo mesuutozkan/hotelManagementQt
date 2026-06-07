@@ -40,6 +40,10 @@ void MainWindow::on_pushButtonCheckIn_clicked()
      * for the dialog screens (mainwindow - checkindialog). Qt allows this handy function.
      * But if it is not used, use classically "delete checkInDialog;"
      */
+
+    //Memory management. If checkInDialog is closed, erase memory that it uses.
+
+    checkInDialog->deleteLater();
 }
 
 
@@ -61,6 +65,10 @@ void MainWindow::on_pushButtonCheckOut_clicked()
         qDebug() << "Cancel Clicked";
 
     }
+
+    //Memory management. If checkInDialog is closed, erase memory that it uses.
+
+    checkInDialog->deleteLater();
 }
 
 
@@ -81,5 +89,9 @@ void MainWindow::on_pushButtonExtra_clicked()
         qDebug() << "Cancel Clicked";
 
     }
+
+    //Memory management. If extraButtonDialog is closed, erase memory that it uses.
+
+    extraButtonDialog->deleteLater();
 }
 

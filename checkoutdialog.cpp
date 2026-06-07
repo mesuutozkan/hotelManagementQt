@@ -4,6 +4,8 @@
 #include "hotel.h"
 #include "room.h"
 
+#include <QMessageBox>
+
 CheckOutDialog::CheckOutDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::CheckOutDialog)
@@ -44,7 +46,7 @@ void CheckOutDialog::setTotalDays(int newTotalDays)
 
 void CheckOutDialog::on_pushButtonCalculateFee_clicked()
 {
-    if(ui->lineEditTotalDays->text().toInt())
+    if(ui->lineEditTotalDays->text().toInt() && ui->lineEditTotalDays->text().toInt() != 0)
     {
         Hotel* hotel = Hotel::getInstance();
 
@@ -53,6 +55,10 @@ void CheckOutDialog::on_pushButtonCalculateFee_clicked()
         int totalFee = ((room->getDailyRate()) * (ui->lineEditTotalDays->text().toInt())) + room->getExtraExpenses();
 
         ui->lineEditTotalCost->setText(QString::number(totalFee));
+    }
+    else
+    {
+        QMessageBox::critical(nullptr, "Error", "Invalid day !");
     }
 }
 
@@ -69,9 +75,16 @@ void CheckOutDialog::setCurrentRoomNumber(int newCurrentRoomNumber)
 
 void CheckOutDialog::on_pushButtonCheckOut_clicked()
 {
-    setTotalDays(ui->lineEditTotalDays->text().toInt());
+        if(ui->lineEditTotalCost->text().toInt() != 0)
+        {
+        setTotalDays(ui->lineEditTotalDays->text().toInt());
 
         accept();
+        }
+        else
+        {
+            QMessageBox::critical(nullptr, "Error", "Calculate first !");
+        }
 
 }
 

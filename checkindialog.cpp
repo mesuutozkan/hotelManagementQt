@@ -138,6 +138,11 @@ void CheckInDialog::setStatusRoomButtons(int _roomNumber, QPushButton *pushButto
             qDebug() << "Cancel Clicked";
 
         }
+
+        //Memory management. If roomClickedForCheckInDialog is closed, erase memory that it uses.
+
+        roomClickedForCheckInDialog->deleteLater();
+
     }
     }
     else
@@ -168,6 +173,10 @@ void CheckInDialog::setStatusRoomButtons(int _roomNumber, QPushButton *pushButto
                 qDebug() << "Cancel Clicked";
 
             }
+
+            //Memory management. If checkOutDialog is closed, erase memory that it uses.
+
+            checkOutDialog->deleteLater();
         }
     }
 }

@@ -4,6 +4,8 @@
 #include "hotel.h"
 #include "room.h"
 
+//Use QMessageBox class for error message pop-ups.
+
 #include <QMessageBox>
 
 ExtraButtonDialog::ExtraButtonDialog(QWidget *parent)
@@ -26,15 +28,24 @@ void ExtraButtonDialog::on_pushButtonOkay_clicked()
 
         Room *room = hotel->findRoom(ui->lineEditRoomNumber->text().toInt());
 
-        if(room != nullptr && room->isRoomOccupied())
+        if(room != nullptr)
         {
+            if(room->isRoomOccupied())
+            {
             room->addExtraExpenses(ui->lineEditExtras->text().toInt());
             accept();
+            }
+            else
+            {
+                QMessageBox::critical(nullptr, "Error", "Room is empty!");
+
+
+            }
         }
 
-        else if(!room->isRoomOccupied())
+        else
         {
-            QMessageBox::critical(nullptr, "Error", "Room is empty!");
+            QMessageBox::critical(nullptr, "Error", "Invalid Room !\nCheck your room number and enter it again.");
         }
     }
 }

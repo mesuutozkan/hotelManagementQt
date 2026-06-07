@@ -1,7 +1,6 @@
 #include "roomclickedforcheckindialog.h"
 #include "ui_roomclickedforcheckindialog.h"
 
-#include "room.h"
 
 RoomClickedForCheckInDialog::RoomClickedForCheckInDialog(QWidget *parent)
     : QDialog(parent)
