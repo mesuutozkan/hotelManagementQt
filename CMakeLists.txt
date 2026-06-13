@@ -23,6 +23,12 @@ qt_add_resources(hotelManagementQt "resources"
     PREFIX "/"
     FILES
         images/hotel.png
+        images/checkInSH.png
+        images/checkOutSH.png
+        images/ekstraSH.png
+        images/hotelManagementSH.png
+        images/roomManagement.png
+        images/roomOccupiedSH.png
 )
 
 target_link_libraries(hotelManagementQt
