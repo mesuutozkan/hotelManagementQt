@@ -12,6 +12,8 @@ The main dashboard provides quick access to hotel operations such as Check In, C
 
 ## Room Management
 
+### Check In 
+
 ![Check In](images/roomManagement.png)
 
 This push button allows users to see room management screen showing all available rooms and their current occupancy status (green or red). This button allows for only check in operations.
@@ -24,11 +26,16 @@ Check in operations can be done by clicking on an available room and typing cust
 
 ---
 
+
+### Extra 
+
 ![Extra Dialog](images/ekstraSH.png)
 
 Shows new child dialog to add extra spendings for a typed occupied room. 
 
 ---
+
+### Check Out 
 
 ![Check Out](images/roomOccupiedSH.png)
 
